@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DivineEdge Careers Private Limited | Technology and Career Development</title>
+<meta name="description" content="DivineEdge Careers connects technology, professional development, and business needs through innovative digital solutions and career-focused services.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b1f3a'/%3E%3Cpath d='M9 7h7a9 9 0 010 18H9z' fill='none' stroke='%2310b981' stroke-width='3.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='8' r='2.6' fill='%23d4af37'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b1f3a; --navy-d:#061326; --navy-m:#163359;
+  --em:#10b981; --em-d:#047857; --em-t:#e9f8f2;
+  --gold:#d4af37; --gold-l:#ecd48a;
+  --ink:#14263f; --muted:#546479; --line:#dde6e4; --bg:#f4f8f7; --white:#fff;
+  --head:'DM Serif Display',Georgia,'Times New Roman',serif;
+  --body:'Hanken Grotesk','Segoe UI',system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--body);color:var(--ink);background:var(--white);line-height:1.7;font-size:1.0625rem;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+svg{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--em-d);outline-offset:3px;border-radius:5px}
+.w{width:min(1180px,100% - 2.5rem);margin-inline:auto}
+h1,h2,h3{font-family:var(--head);font-weight:400;line-height:1.12;letter-spacing:-.01em}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;color:var(--navy);padding:.6rem 1rem;border-radius:6px;z-index:200}
+.skip:focus{left:8px}
+
+/* Header: white bar with gold rule */
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:3px solid var(--gold)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--navy)}
+.logo svg{width:40px;height:40px;flex:none}
+.logo span{display:grid;line-height:1}
+.logo b{font-family:var(--head);font-weight:400;font-size:1.55rem;letter-spacing:-.01em}
+.logo small{font-size:.62rem;letter-spacing:.34em;font-weight:700;color:var(--em-d);margin-top:.22rem}
+.menu{display:flex;list-style:none;gap:.15rem;align-items:center}
+.menu a{display:block;text-decoration:none;font-weight:600;font-size:.96rem;color:var(--navy);padding:.5rem .85rem;border-radius:8px;position:relative;transition:background .2s,color .2s}
+.menu a:hover{background:var(--em-t);color:var(--em-d)}
+.menu a.active::after{content:"";position:absolute;left:.85rem;right:.85rem;bottom:2px;height:2px;background:var(--gold)}
+.menu a.cta{background:var(--navy);color:#fff;margin-left:.6rem;padding:.6rem 1.3rem}
+.menu a.cta:hover{background:var(--navy-m);color:#fff}
+.tg{display:none;width:46px;height:46px;border:1.5px solid var(--navy);border-radius:10px;background:none;color:var(--navy);cursor:pointer;place-items:center}
+.tg svg{width:22px;height:22px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-family:var(--body);font-weight:700;font-size:1rem;padding:.95rem 1.7rem;border-radius:10px;border:2px solid transparent;min-height:50px;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s,color .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-em{background:var(--em);color:var(--navy-d)}
+.btn-em:hover{background:#34d399;box-shadow:0 14px 26px -14px rgba(16,185,129,.9)}
+.btn-line{border-color:rgba(255,255,255,.45);color:#fff;background:transparent}
+.btn-line:hover{border-color:var(--gold);color:var(--gold-l)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-m)}
+.btn-gold{background:var(--gold);color:var(--navy-d)}
+.btn-gold:hover{background:var(--gold-l)}
+
+/* Hero */
+.hero{background:radial-gradient(800px 480px at 90% 70%,rgba(16,185,129,.22),transparent 65%),linear-gradient(180deg,var(--navy) 0,var(--navy-d) 100%);color:#fff;padding:clamp(3.5rem,8vw,6.5rem) 0 0;overflow:hidden}
+.hero-g{display:grid;grid-template-columns:1.05fr .95fr;gap:2rem;align-items:center}
+.hero h1{font-size:clamp(2.4rem,5.4vw,4.5rem);animation:up .9s both}
+.hero h1 span{display:block;color:var(--gold-l)}
+.hero p{margin-top:1.5rem;max-width:50ch;color:#c6d3e4;font-size:1.15rem;animation:up .9s .12s both}
+.cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.1rem;animation:up .9s .24s both}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.stairs{animation:up 1s .2s both}
+.stairs svg{width:100%;height:auto}
+.stairs .st{transform-origin:bottom;animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
+.stairs .st:nth-of-type(1){animation-delay:.4s}.stairs .st:nth-of-type(2){animation-delay:.55s}.stairs .st:nth-of-type(3){animation-delay:.7s}.stairs .st:nth-of-type(4){animation-delay:.85s}
+@keyframes rise{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.stairs .path{stroke-dasharray:700;stroke-dashoffset:700;animation:dr 2s 1s ease-out forwards}
+@keyframes dr{to{stroke-dashoffset:0}}
+.focus{margin-top:3rem;border-top:1px solid rgba(255,255,255,.14);display:grid;grid-template-columns:repeat(3,1fr)}
+.focus div{padding:1.3rem 1rem;text-align:center;font-weight:600;color:#e5ecf6;border-right:1px solid rgba(255,255,255,.14);font-size:.98rem}
+.focus div:last-child{border-right:0}
+.focus div::before{content:"";display:block;width:26px;height:3px;background:var(--gold);margin:0 auto .7rem}
+
+/* Sections */
+section{padding:clamp(4.5rem,8vw,7rem) 0}
+.sh{max-width:700px;margin-bottom:3rem}
+.sh h2,.ab h2,.cr h2,.ct h2{font-size:clamp(2rem,4.2vw,3.2rem);color:var(--navy)}
+.sh p{margin-top:1rem;color:var(--muted)}
+.rule{display:block;width:54px;height:4px;background:var(--gold);margin-bottom:1.2rem;border-radius:2px}
+
+/* About */
+.ab-g{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.ab p{margin-top:1.1rem;color:var(--muted)}
+.fx{margin-top:1.6rem;display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.fx div{border-left:3px solid var(--em);padding:.2rem 0 .2rem .9rem}
+.fx dt{font-size:.8rem;color:var(--muted);font-weight:600}
+.fx dd{font-weight:700;color:var(--navy)}
+.mv{display:grid;gap:1rem}
+.mc{border-radius:22px;padding:1.9rem;background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.mc.v{background:var(--em-d)}
+.mc h3{font-size:1.3rem;color:var(--gold-l);margin-bottom:.5rem}
+.mc p{margin:0;color:#e8eef6;font-size:1.05rem;line-height:1.6}
+.vals{margin-top:2.4rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.vals div{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:1.2rem 1.1rem}
+.vals h3{font-family:var(--body);font-weight:700;font-size:1rem;color:var(--navy)}
+.vals p{margin:.25rem 0 0;font-size:.92rem;line-height:1.5}
+
+/* Services */
+.sv{background:var(--bg)}
+.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:1.8rem 1.5rem;box-shadow:0 8px 24px -18px rgba(11,31,58,.5);transition:transform .3s,background .3s,color .3s,box-shadow .3s}
+.ic{width:54px;height:54px;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;margin-bottom:1.2rem;transition:background .3s,border-color .3s}
+.ic svg{width:25px;height:25px;stroke:var(--em-d);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:stroke .3s}
+.card h3{font-size:1.28rem;color:var(--navy);margin-bottom:.5rem;line-height:1.2;transition:color .3s}
+.card p{font-size:.95rem;color:var(--muted);line-height:1.6;transition:color .3s}
+.card:hover{transform:translateY(-6px);background:var(--navy);border-color:var(--navy);box-shadow:0 26px 44px -22px rgba(11,31,58,.8)}
+.card:hover h3{color:#fff}.card:hover p{color:#c6d3e4}
+.card:hover .ic{background:var(--gold);border-color:var(--gold)}.card:hover .ic svg{stroke:var(--navy)}
+.caps{margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;font-size:.95rem;color:var(--muted)}
+.caps b{color:var(--navy);margin-right:.4rem}
+.caps span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:.3rem 1rem;font-weight:600;color:var(--ink)}
+
+/* Solutions */
+.slg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.sol{border:1px solid var(--line);border-top:5px solid var(--em);border-radius:8px 8px 24px 24px;padding:2rem 1.7rem;background:#fff;box-shadow:0 22px 40px -32px rgba(11,31,58,.7);transition:transform .3s}
+.sol:hover{transform:translateY(-5px)}
+.sol:nth-child(2){border-top-color:var(--gold)}
+.sol .ic{margin-bottom:1rem}
+.sol h3{font-size:1.5rem;color:var(--navy);margin-bottom:.6rem}
+.sol>p{color:var(--muted);font-size:.98rem}
+.sol h4{font-size:.82rem;color:var(--em-d);margin:1.2rem 0 .35rem;font-weight:700}
+.sol ul{list-style:none;display:grid;gap:.4rem;font-size:.95rem}
+.sol li{display:flex;gap:.6rem}
+.sol li::before{content:"";flex:none;width:8px;height:8px;margin-top:.65rem;border-radius:50%;background:var(--em)}
+.sol .cn{margin-top:1.2rem;font-size:.82rem;color:var(--muted);font-weight:600;border-top:1px dashed var(--line);padding-top:.8rem}
+
+/* Why */
+.why{background:var(--navy);color:#fff}
+.why-g{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,6vw,5rem);align-items:start}
+.why h2{color:#fff}
+.why .sh p,.why-g>div:first-child p{color:#c6d3e4;margin-top:1rem}
+.wl{display:grid;grid-template-columns:1fr 1fr;gap:0 2.2rem}
+.wl div{padding:1.4rem 0;border-top:1px solid rgba(212,175,55,.45)}
+.wl h3{font-family:var(--body);font-weight:700;font-size:1.1rem;color:#fff;margin-bottom:.3rem;display:flex;gap:.7rem;align-items:center}
+.wl h3 svg{width:22px;height:22px;stroke:var(--em);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.wl p{color:#c6d3e4;font-size:.96rem;line-height:1.6;padding-left:2.15rem}
+
+/* Careers */
+.cr{background:var(--em-t)}
+.cr .head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1.5rem;margin-bottom:2.4rem}
+.cr .head p{margin-top:1rem;color:var(--muted);max-width:56ch}
+.rg{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem}
+.role{background:#fff;border:1px solid #cfe5dd;border-radius:20px;padding:1.6rem;display:flex;flex-direction:column;gap:.5rem;transition:box-shadow .3s,transform .3s}
+.role:hover{transform:translateY(-3px);box-shadow:0 22px 40px -28px rgba(4,120,87,.7)}
+.role .tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.role .tags span{font-size:.78rem;font-weight:700;border-radius:999px;padding:.2rem .8rem}
+.tg1{background:#fbf3d4;color:#6e5600}.tg2{background:var(--em-t);color:var(--em-d)}
+.role h3{font-size:1.5rem;color:var(--navy)}
+.role p{color:var(--muted);font-size:.97rem}
+details{margin-top:auto;border-top:1px solid var(--line);padding-top:.8rem}
+summary{cursor:pointer;font-weight:700;color:var(--em-d);list-style:none;display:flex;justify-content:space-between;align-items:center;min-height:36px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details ul{margin:.7rem 0 .2rem 1.1rem;display:grid;gap:.3rem;color:var(--muted);font-size:.94rem}
+.dn{margin-top:1.6rem;font-size:.9rem;color:var(--muted)}
+
+/* Approach: stair-step timeline */
+.ap-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;align-items:end;position:relative}
+.step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:1.6rem 1.4rem;position:relative;box-shadow:0 18px 34px -26px rgba(11,31,58,.6)}
+.step:nth-child(1){margin-bottom:6rem}.step:nth-child(2){margin-bottom:4rem}.step:nth-child(3){margin-bottom:2rem}.step:nth-child(4){margin-bottom:0}
+.step .n{width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--gold-l);font-family:var(--head);font-size:1.3rem;display:grid;place-items:center;margin-bottom:1rem}
+.step:last-child .n{background:var(--em);color:var(--navy-d)}
+.step h3{font-size:1.3rem;color:var(--navy);margin-bottom:.4rem}
+.step p{color:var(--muted);font-size:.95rem;line-height:1.6}
+.step::after{content:"";position:absolute;left:1.4rem;right:1.4rem;bottom:-12px;height:4px;border-radius:2px;background:var(--gold)}
+
+/* Contact */
+.ct{background:var(--bg)}
+.cg{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.ct p.l{margin-top:1.1rem;color:var(--muted)}
+.ph{margin-top:1.6rem;display:grid;gap:.7rem}
+.ph div{display:flex;gap:.8rem;border-bottom:1px dashed #c3d3cf;padding-bottom:.7rem}
+.ph dt{font-weight:700;color:var(--navy);min-width:86px}.ph dd{color:var(--muted)}
+.note{margin-top:1rem;font-size:.88rem;color:var(--muted)}
+form{background:#fff;border:1px solid var(--line);border-top:5px solid var(--gold);border-radius:8px 8px 24px 24px;padding:2rem;display:grid;gap:1.1rem;box-shadow:0 30px 56px -38px rgba(11,31,58,.7)}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+label{font-weight:700;font-size:.92rem;color:var(--navy);display:grid;gap:.4rem}
+label i{color:#b42318;font-style:normal}
+input,select,textarea{font:inherit;color:var(--ink);padding:.8rem 1rem;border:1.5px solid #c4d3cf;border-radius:10px;background:#fff;width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--em-d);box-shadow:0 0 0 3px rgba(16,185,129,.28)}
+textarea{min-height:120px;resize:vertical}
+.err{color:#b42318;font-size:.85rem;font-weight:500;min-height:1.1rem}
+.bad{border-color:#b42318}
+.ok{display:none;background:var(--em-t);border:1px solid #9edbc3;color:var(--em-d);border-radius:12px;padding:1rem 1.2rem;font-weight:600}
+.ok.show{display:block}
+
+/* Footer */
+footer{background:var(--navy-d);color:#b3c1d4;padding:4rem 0 1.8rem;border-top:4px solid var(--gold)}
+.fg{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.1fr;gap:2.2rem}
+footer .logo{color:#fff;margin-bottom:1rem}
+footer .logo small{color:var(--em)}
+footer h4{font-family:var(--head);font-weight:400;color:var(--gold-l);font-size:1.2rem;margin-bottom:1rem}
+footer ul{list-style:none;display:grid;gap:.5rem;font-size:.95rem}
+footer a{text-decoration:none}footer a:hover{color:#fff}
+.soc{display:flex;gap:.6rem;margin-top:1.2rem}
+.soc button{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:none;color:#b3c1d4;display:grid;place-items:center;cursor:not-allowed}
+.soc svg{width:19px;height:19px;fill:currentColor}
+.copy{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.12);font-size:.88rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem}
+
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rv.vis,.nojs .rv{opacity:1;transform:none}
+
+@media (max-width:1100px){
+  .sg{grid-template-columns:repeat(2,1fr)}
+  .fg{grid-template-columns:1fr 1fr}.fg>div:first-child{grid-column:1/-1}
+  .ap-g{grid-template-columns:repeat(2,1fr);align-items:stretch}
+  .step:nth-child(n){margin-bottom:0}
+}
+@media (max-width:900px){
+  .tg{display:grid}
+  .menu{position:absolute;top:71px;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;padding:.6rem 1.25rem 1.2rem;gap:.2rem;border-bottom:3px solid var(--gold);box-shadow:0 24px 40px -20px rgba(11,31,58,.5);display:none}
+  .menu.open{display:flex;animation:up .3s both}
+  .menu a.cta{margin:.5rem 0 0;text-align:center}
+  .menu a.active::after{display:none}
+  .menu a.active{background:var(--em-t)}
+  .hero-g,.ab-g,.why-g,.cg{grid-template-columns:1fr}
+  .stairs{max-width:480px;margin:0 auto;width:100%}
+  .slg{grid-template-columns:1fr}
+  .vals{grid-template-columns:1fr 1fr}
+}
+@media (max-width:700px){
+  .sg,.rg,.r2,.wl,.fx{grid-template-columns:1fr}
+  .focus{grid-template-columns:1fr}
+  .focus div{border-right:0;border-bottom:1px solid rgba(255,255,255,.14)}
+  .focus div:last-child{border-bottom:0}
+  .cta .btn{width:100%}
+  .fg{grid-template-columns:1fr}
+  form{padding:1.4rem}
+  .ph div{flex-direction:column;gap:.1rem}
+  /* vertical timeline on mobile */
+  .ap-g{grid-template-columns:1fr;gap:0;padding-left:1.6rem;border-left:3px solid var(--gold);margin-left:.4rem}
+  .step{margin-bottom:1.2rem!important}
+  .step::after{display:none}
+  .step::before{content:"";position:absolute;left:calc(-1.6rem - 9px);top:2rem;width:15px;height:15px;border-radius:50%;background:var(--em);border:3px solid #fff;box-shadow:0 0 0 2px var(--gold)}
+}
+@media (max-width:420px){.vals{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .stairs .path{stroke-dashoffset:0}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body class="nojs">
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="w nav">
+    <a class="logo" href="#home" aria-label="DivineEdge Careers home">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#0b1f3a"/><path d="M12 9h8.5a11 11 0 010 22H12z" fill="none" stroke="#10b981" stroke-width="4" stroke-linejoin="round"/><circle cx="30" cy="10" r="3" fill="#d4af37"/></svg>
+      <span><b>DivineEdge</b><small>CAREERS</small></span>
+    </a>
+    <button class="tg" id="tg" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <ul class="menu" id="menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#solutions">Solutions</a></li>
+      <li><a href="#careers">Careers</a></li>
+      <li><a class="cta" href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="home" style="padding-bottom:0">
+  <div class="w">
+    <div class="hero-g">
+      <div>
+        <h1>Empowering Talent. Enabling Technology. <span>Shaping Futures.</span></h1>
+        <p>DivineEdge Careers connects technology, professional development, and business needs through innovative digital solutions and career-focused services.</p>
+        <div class="cta">
+          <a class="btn btn-em" href="#services">Explore Our Services</a>
+          <a class="btn btn-line" href="#contact">Contact Us</a>
+        </div>
+      </div>
+      <div class="stairs" aria-hidden="true">
+        <svg viewBox="0 0 480 380" fill="none">
+          <rect class="st" x="40" y="270" width="92" height="90" rx="8" fill="#163359"/>
+          <rect class="st" x="140" y="210" width="92" height="150" rx="8" fill="#1c4373"/>
+          <rect class="st" x="240" y="140" width="92" height="220" rx="8" fill="#0f7a5a"/>
+          <rect class="st" x="340" y="60" width="92" height="300" rx="8" fill="#10b981"/>
+          <path class="path" d="M60 250C130 230 170 190 190 170S290 120 386 40" stroke="#d4af37" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="386" cy="40" r="10" fill="#d4af37"/>
+          <g stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".9"><path d="M72 300l-10 10 10 10M100 300l10 10-10 10"/><path d="M172 252h28M172 268h20"/><path d="M270 190v40M270 190l14 10-14 10"/><path d="M372 120l11 11 20-22"/></g>
+        </svg>
+      </div>
+    </div>
+    <div class="focus">
+      <div>Modern software technologies</div>
+      <div>Collaborative development</div>
+      <div>Technical skill development</div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="w">
+    <div class="ab-g">
+      <div class="rv">
+        <span class="rule"></span>
+        <h2>Technology and talent, growing together.</h2>
+        <p>DivineEdge Careers, operating under the brand DivineEdge, is a fictional technology company based in Pune, Maharashtra, India. It focuses on software development, web applications, database management and digital solutions, helping organizations improve their digital capabilities.</p>
+        <p>The company aims to build user-friendly applications and provide opportunities for students to develop practical technical skills.</p>
+        <dl class="fx">
+          <div><dt>Company</dt><dd>DivineEdge Careers Private Limited</dd></div>
+          <div><dt>Brand</dt><dd>DivineEdge</dd></div>
+          <div><dt>Industry</dt><dd>Technology / Software</dd></div>
+          <div><dt>Location</dt><dd>Pune, Maharashtra, India</dd></div>
+        </dl>
+      </div>
+      <div class="mv rv">
+        <div class="mc"><h3>Our mission</h3><p>To support digital innovation through practical, user-friendly technology solutions, and to support professional growth through technology and learning.</p></div>
+        <div class="mc v"><h3>Our vision</h3><p>Build meaningful connections between talent, innovation, and opportunity.</p></div>
+      </div>
+    </div>
+    <div class="vals">
+      <div class="rv"><h3>Integrity</h3><p>Honest, dependable conduct.</p></div>
+      <div class="rv"><h3>Innovation</h3><p>Practical new ideas that help.</p></div>
+      <div class="rv"><h3>Collaboration</h3><p>Better results together.</p></div>
+      <div class="rv"><h3>Continuous learning</h3><p>Always building skills.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sv" id="services">
+  <div class="w">
+    <div class="sh rv"><span class="rule"></span><h2>Our services</h2><p>Software, web and technology services, alongside learning and career support.</p></div>
+    <div class="sg">
+      <article class="card rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></div><h3>Software Development</h3><p>Custom software built around real user needs.</p></article>
+      <article class="card rv"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8M12 18v3"/></svg></div><h3>Web Application Development</h3><p>Responsive, user-friendly websites and web applications.</p></article>
+      <article class="card rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0012 3z"/></svg></div><h3>IT Consulting</h3><p>Practical guidance on technology choices and planning.</p></article>
+      <article class="card rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></div><h3>Career Development Solutions</h3><p>Support for building skills, confidence and a clear professional direction.</p></article>
+      <article class="card rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5zM6 11.5V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.5"/></svg></div><h3>Technical Training and Skill Development</h3><p>Practical learning that helps students and professionals build real technical skills.</p></article>
+      <article class="card rv"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6M16 14c3 0 6 1.8 6 5"/></svg></div><h3>Recruitment Support</h3><p>Help connecting organizations with suitable, well-prepared talent.</p></article>
+      <article class="card rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0113.7-5.6L20 8M20 3v5h-5M20 12a8 8 0 01-13.7 5.6L4 16M4 21v-5h5"/></svg></div><h3>Digital Transformation</h3><p>Moving everyday work onto better digital tools and processes.</p></article>
+      <article class="card rv"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2M3 13h18"/></svg></div><h3>Business Technology Solutions</h3><p>Technology matched to the way your organization works.</p></article>
+    </div>
+    <div class="caps rv"><b>Also in our toolkit</b><span>Database solutions</span><span>API integration</span><span>Software testing</span></div>
+  </div>
+</section>
+
+<section id="solutions">
+  <div class="w">
+    <div class="sh rv"><span class="rule"></span><h2>Our solutions</h2><p>Three solution concepts that show how we could support organizations and individuals. They describe our approach and are not operating products.</p></div>
+    <div class="slg">
+      <article class="sol rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2M3 13h18"/></svg></div>
+        <h3>Business Technology Solutions</h3>
+        <p>Technology planning and software built around how an organization actually works.</p>
+        <h4>How it could help organizations</h4><ul><li>Clearer, more efficient digital processes</li><li>Applications and databases designed around real needs</li></ul>
+        <h4>How it could help individuals</h4><ul><li>Simpler, more user-friendly tools for everyday work</li></ul>
+        <p class="cn">Concept only. Not an operating product.</p>
+      </article>
+      <article class="sol rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></div>
+        <h3>Talent and Career Enablement</h3>
+        <p>Support that connects people building skills with organizations looking for talent.</p>
+        <h4>How it could help organizations</h4><ul><li>Access to motivated, well-prepared candidates</li><li>Coordination through recruitment support</li></ul>
+        <h4>How it could help individuals</h4><ul><li>Practical experience and a clearer career direction</li></ul>
+        <p class="cn">Concept only. Not an operating product.</p>
+      </article>
+      <article class="sol rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5zM6 11.5V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.5"/></svg></div>
+        <h3>Digital Learning Platforms</h3>
+        <p>Online learning experiences for technical skills, planned with practical use in mind.</p>
+        <h4>How it could help organizations</h4><ul><li>Structured upskilling for teams</li><li>Learning that fits flexible schedules</li></ul>
+        <h4>How it could help individuals</h4><ul><li>Hands-on technical skill development at their own pace</li></ul>
+        <p class="cn">Concept only. Not an operating product.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="w why-g">
+    <div class="rv"><span class="rule"></span><h2>Why choose us</h2><p>A technology partner that cares about people as much as products.</p></div>
+    <div class="wl">
+      <div class="rv"><h3><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Technology-driven thinking</h3><p>Modern software technologies applied to real problems.</p></div>
+      <div class="rv"><h3><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Focus on professional development</h3><p>Technical skill development is part of how we work.</p></div>
+      <div class="rv"><h3><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Collaborative approach</h3><p>We build with you, keeping communication open.</p></div>
+      <div class="rv"><h3><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Flexible solutions</h3><p>Plans shaped to fit your needs and your pace.</p></div>
+      <div class="rv"><h3><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Commitment to quality</h3><p>Testing and care to help ensure dependable releases.</p></div>
+      <div class="rv"><h3><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Continuous improvement</h3><p>We review, learn and refine as we go.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cr" id="careers">
+  <div class="w">
+    <div class="head rv">
+      <div>
+        <span class="rule"></span>
+        <h2>Your Next Opportunity Starts Here.</h2>
+        <p>Explore the kinds of learning and career paths we hope to offer. The roles below are illustrative sample positions, not actual vacancies.</p>
+      </div>
+      <button class="btn btn-navy" id="explore" type="button">Explore Opportunities</button>
+    </div>
+    <div class="rg" id="roles">
+      <article class="role rv"><div class="tags"><span class="tg1">Illustrative sample position</span><span class="tg2">Not a vacancy</span></div><h3>Junior Software Developer</h3><p>Build and test features with a collaborative team using modern software technologies.</p>
+        <details><summary>Sample role details</summary><ul><li>Write clean, maintainable code</li><li>Take part in code review and testing</li><li>Learn from teammates and keep growing</li></ul></details></article>
+      <article class="role rv"><div class="tags"><span class="tg1">Illustrative sample position</span><span class="tg2">Not a vacancy</span></div><h3>Frontend Developer Intern</h3><p>Learn to build responsive, user-friendly interfaces for web applications.</p>
+        <details><summary>Sample role details</summary><ul><li>Work with HTML, CSS and JavaScript</li><li>Turn designs into working pages</li><li>Gain practical technical skills</li></ul></details></article>
+      <article class="role rv"><div class="tags"><span class="tg1">Illustrative sample position</span><span class="tg2">Not a vacancy</span></div><h3>UI/UX Design Intern</h3><p>Explore how to design clear, easy-to-use experiences with a collaborative team.</p>
+        <details><summary>Sample role details</summary><ul><li>Sketch and refine interface ideas</li><li>Learn from user feedback</li><li>Work alongside developers</li></ul></details></article>
+      <article class="role rv"><div class="tags"><span class="tg1">Illustrative sample position</span><span class="tg2">Not a vacancy</span></div><h3>Digital Marketing Intern</h3><p>Learn how content and campaigns help technology brands reach their audiences.</p>
+        <details><summary>Sample role details</summary><ul><li>Support content planning</li><li>Learn the basics of campaign planning</li><li>Understand audience engagement</li></ul></details></article>
+    </div>
+    <p class="dn rv">Interested in future opportunities? Use the contact form and choose "Careers and future opportunities".</p>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="w">
+    <div class="sh rv"><span class="rule"></span><h2>Our approach</h2><p>Four steps that take an idea from requirements to a reliable result.</p></div>
+    <div class="ap-g">
+      <div class="step rv"><div class="n">1</div><h3>Understand Requirements</h3><p>Listen first, learning your goals, users and constraints.</p></div>
+      <div class="step rv"><div class="n">2</div><h3>Plan the Solution</h3><p>Shape a clear, practical plan before any work begins.</p></div>
+      <div class="step rv"><div class="n">3</div><h3>Develop and Collaborate</h3><p>Build in the open, working closely with you throughout.</p></div>
+      <div class="step rv"><div class="n">4</div><h3>Review and Improve</h3><p>Test, review and refine so releases are dependable.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="ct" id="contact">
+  <div class="w cg">
+    <div class="rv">
+      <span class="rule"></span>
+      <h2>Contact us</h2>
+      <p class="l">Tell us about your organization and what you are looking for. This form is a front-end demonstration, so nothing is sent from this page.</p>
+      <dl class="ph">
+        <div><dt>Email</dt><dd>[Email address to be added]</dd></div>
+        <div><dt>Phone</dt><dd>[Phone number to be added]</dd></div>
+        <div><dt>Location</dt><dd>Pune, Maharashtra, India</dd></div>
+      </dl>
+      <p class="note">Email and phone are placeholders to be completed by an authorised representative.</p>
+    </div>
+    <form id="cf" class="rv" novalidate>
+      <div class="r2">
+        <label for="n">Full name <i aria-hidden="true">*</i><input id="n" type="text" autocomplete="name" required aria-describedby="en"><span class="err" id="en"></span></label>
+        <label for="e">Email address <i aria-hidden="true">*</i><input id="e" type="email" autocomplete="email" required aria-describedby="ee"><span class="err" id="ee"></span></label>
+      </div>
+      <div class="r2">
+        <label for="o">Organization <i aria-hidden="true">*</i><input id="o" type="text" autocomplete="organization" required aria-describedby="eo"><span class="err" id="eo"></span></label>
+        <label for="s">Service of interest <i aria-hidden="true">*</i>
+          <select id="s" required aria-describedby="es">
+            <option value="">Select a service</option>
+            <option>Software Development</option>
+            <option>Web Application Development</option>
+            <option>IT Consulting</option>
+            <option>Career Development Solutions</option>
+            <option>Technical Training and Skill Development</option>
+            <option>Recruitment Support</option>
+            <option>Digital Transformation</option>
+            <option>Business Technology Solutions</option>
+            <option>Careers and future opportunities</option>
+          </select><span class="err" id="es"></span></label>
+      </div>
+      <label for="m">Message <i aria-hidden="true">*</i><textarea id="m" required aria-describedby="em"></textarea><span class="err" id="em"></span></label>
+      <button class="btn btn-gold" type="submit">Submit enquiry</button>
+      <div class="ok" id="ok" role="status" aria-live="polite">Thank you. Your form is complete. This is a front-end demonstration, so no email has been sent.</div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="w">
+    <div class="fg">
+      <div>
+        <a class="logo" href="#home" aria-label="DivineEdge Careers home">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#163359"/><path d="M12 9h8.5a11 11 0 010 22H12z" fill="none" stroke="#10b981" stroke-width="4" stroke-linejoin="round"/><circle cx="30" cy="10" r="3" fill="#d4af37"/></svg>
+          <span><b>DivineEdge</b><small>CAREERS</small></span>
+        </a>
+        <p>Technology, software and career development, built around practical, user-friendly solutions.</p>
+        <div class="soc" aria-label="Social media (links to be added)">
+          <button type="button" disabled title="LinkedIn link to be added" aria-label="LinkedIn (link to be added)"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5 2.5 2.5 0 01.01-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.83-2 3.77-2 4.03 0 4.77 2.55 4.77 5.87V21h-4v-5.07c0-1.2-.02-2.77-1.77-2.77-1.77 0-2.04 1.3-2.04 2.68V21h-4z"/></svg></button>
+          <button type="button" disabled title="GitHub link to be added" aria-label="GitHub (link to be added)"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.9.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 015 0c1.9-1.29 2.74-1.02 2.74-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0012 2z"/></svg></button>
+          <button type="button" disabled title="X link to be added" aria-label="X (link to be added)"><svg viewBox="0 0 24 24"><path d="M18.2 2.5h3.3l-7.2 8.2 8.5 11.3h-6.7l-5.2-6.8-6 6.8H1.6l7.7-8.8L1.2 2.5H8l4.7 6.2zm-1.2 17.5h1.8L7.1 4.4H5.2z"/></svg></button>
+          <button type="button" disabled title="Instagram link to be added" aria-label="Instagram (link to be added)"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3zm5 3.5A4.5 4.5 0 1112 16.5a4.5 4.5 0 010-9zm0 2A2.5 2.5 0 1012 14.5a2.5 2.5 0 000-5zM17.2 6a1.1 1.1 0 110 2.2 1.1 1.1 0 010-2.2z"/></svg></button>
+        </div>
+      </div>
+      <div><h4>Quick links</h4><ul><li><a href="#home">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#solutions">Solutions</a></li><li><a href="#careers">Careers</a></li><li><a href="#approach">Our Approach</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h4>Services</h4><ul><li><a href="#services">Software Development</a></li><li><a href="#services">Web Applications</a></li><li><a href="#services">IT Consulting</a></li><li><a href="#services">Career Development</a></li><li><a href="#services">Technical Training</a></li><li><a href="#services">Recruitment Support</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li>[Email address to be added]</li><li>[Phone number to be added]</li><li>Pune, Maharashtra, India</li></ul></div>
+    </div>
+    <div class="copy"><span>&copy; <span id="yr">2026</span> DivineEdge Careers Private Limited. All rights reserved.</span><span>Sample portfolio website.</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.body.classList.remove('nojs');
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  var tg = document.getElementById('tg'), menu = document.getElementById('menu');
+  function setMenu(o){ menu.classList.toggle('open', o); tg.setAttribute('aria-expanded', o); tg.setAttribute('aria-label', o ? 'Close menu' : 'Open menu'); }
+  tg.addEventListener('click', function(){ setMenu(!menu.classList.contains('open')); });
+  menu.addEventListener('click', function(e){ if(e.target.tagName === 'A') setMenu(false); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') setMenu(false); });
+
+  var navA = [].slice.call(menu.querySelectorAll('a:not(.cta)')), rvs = [].slice.call(document.querySelectorAll('.rv'));
+  if('IntersectionObserver' in window){
+    var so = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ navA.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id); }); } });
+    }, {rootMargin:'-40% 0px -55% 0px'});
+    navA.forEach(function(a){ var s = document.querySelector(a.getAttribute('href')); if(s) so.observe(s); });
+    var ro = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('vis'); ro.unobserve(e.target); } });
+    }, {threshold:.1});
+    rvs.forEach(function(el,i){ el.style.transitionDelay = (i % 4) * 70 + 'ms'; ro.observe(el); });
+  } else { rvs.forEach(function(el){ el.classList.add('vis'); }); }
+
+  // Explore Opportunities: scroll to roles and open all sample role details
+  document.getElementById('explore').addEventListener('click', function(){
+    var all = [].slice.call(document.querySelectorAll('#roles details'));
+    var open = all.every(function(d){ return d.open; });
+    all.forEach(function(d){ d.open = !open; });
+    this.textContent = open ? 'Explore Opportunities' : 'Hide sample role details';
+    if(!open) document.getElementById('roles').scrollIntoView({behavior:'smooth', block:'start'});
+  });
+
+  // Form validation (front-end demonstration)
+  var f = document.getElementById('cf'), ok = document.getElementById('ok');
+  var rules = {
+    n:function(v){ return v.trim().length < 2 ? 'Please enter your full name.' : ''; },
+    e:function(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? '' : 'Please enter a valid email address.'; },
+    o:function(v){ return v.trim().length < 2 ? 'Please enter your organization.' : ''; },
+    s:function(v){ return v ? '' : 'Please choose a service.'; },
+    m:function(v){ return v.trim().length < 10 ? 'Please write at least 10 characters.' : ''; }
+  };
+  var eid = {n:'en', e:'ee', o:'eo', s:'es', m:'em'};
+  function check(id){
+    var el = document.getElementById(id), msg = rules[id](el.value);
+    document.getElementById(eid[id]).textContent = msg;
+    el.classList.toggle('bad', !!msg); el.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    return !msg;
+  }
+  Object.keys(rules).forEach(function(id){ document.getElementById(id).addEventListener('blur', function(){ check(id); }); });
+  f.addEventListener('submit', function(e){
+    e.preventDefault(); ok.classList.remove('show');
+    var good = true, first = null;
+    Object.keys(rules).forEach(function(id){ if(!check(id)){ good = false; if(!first) first = id; } });
+    if(!good){ document.getElementById(first).focus(); return; }
+    f.reset(); ok.classList.add('show');
+    setTimeout(function(){ ok.classList.remove('show'); }, 9000);
+  });
+})();
+</script>
+</body>
+</html>
